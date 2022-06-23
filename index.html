@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>LaslesVPN</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/hystmodal/hystmodal.min.css" />
+    <script src="./js/hystmodal/hystmodal.min.js"></script>
+    <script defer src="./js/script.js"></script>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-type"
+      content="width=device-width, initial-scale = 1.0"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div
+        class="hystmodal"
+        id="user-auth__login__modal-wrapper"
+        aria-hidden="true"
+      >
+        <div class="hystmodal__wrap">
+          <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <button data-hystclose class="hystmodal__close">Close</button>
+            <div class="auth-form">
+              <a class="auth-form__logo logo" href="#">
+                <img src="img/icons/logo.png" alt=""
+              /></a>
+              <div class="auth-form__info">
+                <div class="auth-form__title">
+                  <h2 class="title">Sign in</h2>
+                </div>
+                <div class="auth-form__subtitle">Use your Account</div>
+              </div>
+              <form
+                class="auth-form__login-form"
+                id="auth-login-form"
+                method="post"
+              >
+                <div class="auth-form__field-wrapper">
+                  <div class="auth-form__login-name-wrapper _relative-wrapper">
+                    <label
+                      class="auth-form__login-name-label _auth-form-label"
+                      id="auth-form__login__email-label"
+                      for="auth-form__login__name"
+                      >Enter email</label
+                    >
+                    <input
+                      class="auth-form__login-name-input _auth-form-input"
+                      id="auth-form__login__email-input"
+                      type="email"
+                      autocomplete="username"
+                      spellcheck="false"
+                      name="auth-form__login__name"
+                      autocapitalize="none"
+                      required
+                    />
+                  </div>
+
+                  <div
+                    class="auth-form__login-password-wrapper _relative-wrapper"
+                  >
+                    <label
+                      class="auth-form__login-password-label _auth-form-label"
+                      id="auth-form__login__password-label"
+                      for="auth-form__login__password"
+                      >Enter password
+                    </label>
+                    <input class="auth-form__login-password-input
+                    _auth-form-input" id="auth-form__login__password-input"
+                    type="password" autocomplete="current-password"
+                    spellcheck="false" name=auth-form__login__password"
+                    autocapitalize="none" required />
+                  </div>
+                </div>
+              </form>
+
+              <div class="auth-form__auth-additional-options">
+                <a href="#" class="auth-form__login-restore"> Forgot email? </a>
+              </div>
+              <div class="auth-form__auth-additional-options">
+                <button
+                  href="#"
+                  class="auth-form__create-account-offer create-account-offer-button"
+                  data-hystmodal="#user-auth__create-account__modal-wrapper"
+                >
+                  Create account
+                </button>
+                <button
+                  class="auth-form__login-submit"
+                  id="auth-form__login__submit"
+                  form="auth-login-form"
+                >
+                  Log in
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hystmodal"
+        id="user-auth__create-account__modal-wrapper"
+        aria-hidden="true"
+      >
+        <div class="hystmodal__wrap">
+          <div class="hystmodal__window" role="dialog" aria-modal="true">
+            <button data-hystclose class="hystmodal__close">Закрыть</button>
+            <div class="auth-form">
+              <a class="auth-form__logo logo" href="#">
+                <img src="img/icons/logo.png" alt=""
+              /></a>
+              <div class="auth-form__info">
+                <div class="auth-form__title">
+                  <h2 class="title">Sign up</h2>
+                </div>
+                <div class="auth-form__subtitle">Create your Account</div>
+              </div>
+              <form
+                class="auth-form__login-form"
+                id="auth__create-account__form"
+                method="post"
+              >
+                <div class="auth-form__field-wrapper">
+                  <div
+                    class="auth-form__create-account-container _two-column-grid"
+                  >
+                    <div
+                      class="auth-form__create-account-real-first-name-wrapper _relative-wrapper"
+                    >
+                      <label
+                        class="auth-form__create-account-name-label _auth-form-label"
+                        for="auth-form__create-account-first-name"
+                        id="auth-form__create-account__first-name__label"
+                        >First name
+                      </label>
+                      <input
+                        class="auth-form__create-account-name-input _auth-form-input"
+                        id="auth-create-account__first-name___input"
+                        type="text"
+                        autocomplete="off"
+                        spellcheck="false"
+                        name="auth-form__create-account-first-name"
+                        autocapitalize="sentences"
+                        required
+                      />
+                    </div>
+
+                    <div
+                      class="auth-form__create-account-real-last-name-wrapper _relative-wrapper"
+                    >
+                      <label
+                        class="auth-form__create-account-name-label _auth-form-label"
+                        id="auth-form__create-account__last-name__label"
+                        for="auth-form__create-account-last-name"
+                        >Last name
+                      </label>
+                      <input
+                        class="auth-form__create-account-name-input _auth-form-input"
+                        id="auth-create-account__last-name__input"
+                        type="text"
+                        autocomplete="off"
+                        spellcheck="false"
+                        name="auth-form__create-account-last-name"
+                        autocapitalize="sentences"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div
+                    class="auth-form__create-account-email-wrapper _relative-wrapper"
+                  >
+                    <label
+                      class="auth-form__create-account-email-label _auth-form-label"
+                      id="auth-form__create-account__email-label"
+                      for="auth-form__create-account__email"
+                    >
+                      Enter email</label
+                    >
+                    <input
+                      class="auth-form__create-account-email-input _auth-form-input"
+                      id="auth-form__create-account__email-input"
+                      type="email"
+                      autocomplete="username"
+                      spellcheck="false"
+                      name="auth-form__create-account__email"
+                      autocapitalize="none"
+                      required
+                    />
+                  </div>
+                  <div
+                    class="auth-form__create-account-username-wrapper _relative-wrapper"
+                  >
+                    <label
+                      class="auth-form__create-account-username-label _auth-form-label"
+                      id="auth-form__create-account__label"
+                      for="auth-form__create-account__username"
+                    >
+                      Username</label
+                    >
+                    <input
+                      class="auth-form__create-account-username-input _auth-form-input"
+                      id="auth-form__create-account__input"
+                      type="text"
+                      autocomplete="username"
+                      spellcheck="false"
+                      name="auth-form__create-account__username"
+                      required
+                    />
+                  </div>
+                  <div
+                    class="auth-form__create-account-container "
+                  >
+                    <div
+                      class="auth-form__create-account-password-wrapper _relative-wrapper"
+                    >
+                      <label
+                        class="auth-form__create-account-password-confirm-label _auth-form-label"
+                        id="auth-form__create-account__password-label"
+                        for="auth-create-account-password"
+                        >Enter password</label
+                      >
+                      <input
+                        шв
+                        class="auth-form__create-account-password-input _auth-form-input"
+                        id="auth-form__create-account__password-input"
+                        minlength="8"
+                        type="password"
+                        autocomplete="new-password"
+                        spellcheck="false"
+                        name="auth-form__create-account-password"
+                        required
+                      />
+                    </div>
+                    <div
+                      class="auth-form__create-account-password-confirm-wrapper _relative-wrapper"
+                    >
+                      <label
+                        class="auth-form__create-account-password-confirm-label _auth-form-label"
+                        id="auth-form__create-account__password-confirm-label"
+                        for="auth-form__create-account__password-confirm"
+                        >Confirm password</label
+                      >
+                      <input
+                        class="auth-form__create-account-password-confirm-input _auth-form-input"
+                        id="auth-form__create-account__password-confirm-input"
+                        type="password"
+                        autocomplete="new-password"
+                        spellcheck="false"
+                        name="auth-form__create-account__password-confirm"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+              <div class="auth-form__auth-additional-options">
+                <button
+                  class="auth-form__create-account-login-link"
+                  id="auth-form__create-account__login-link"
+                  data-hystmodal="#user-auth__login__modal-wrapper"
+                >
+                  Sign in instead
+                </button>
+                <button
+                  class="auth-form__create-account-submit-button"
+                  id="auth-form__create-account__submit-button"
+                  form="auth-create-account-form"
+                >
+                  Create account
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <header class="header _default-container-prop">
+        <a class="header__logo logo" href="#">
+          <img src="img/icons/logo.png" alt="" />
+        </a>
+        <nav class="header__navigation navigation">
+          <ul class="navigation__list">
+            <li class="navigation__item">
+              <a href="#"> About </a>
+            </li>
+            <li class="navigation__item">
+              <a href="#"> Features </a>
+            </li>
+            <li class="navigation__item">
+              <a href="#"> Pricing </a>
+            </li>
+            <li class="navigation__item">
+              <a href="#">Testimonials </a>
+            </li>
+            <li class="navigation__item">
+              <a href="#"> Help </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header__cta">
+          <div
+            class="header__universal-user-auth-button"
+            id="universal-user-auth-button"
+            data-hystmodal="#user-auth__login__modal-wrapper"
+          >
+            <svg
+              width="28"
+              height="30"
+              viewBox="0 0 28 30"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M26.9015 23.7643C26.1991 22.1296 25.1799 20.6448 23.9005 19.3926C22.625 18.1367 21.114 17.1355 19.451 16.444C19.4361 16.4367 19.4212 16.433 19.4063 16.4257C21.726 14.7795 23.234 12.098 23.234 9.07256C23.234 4.0607 19.101 0 14 0C8.89897 0 4.76602 4.0607 4.76602 9.07256C4.76602 12.098 6.27399 14.7795 8.59365 16.4294C8.57876 16.4367 8.56387 16.4404 8.54897 16.4477C6.8809 17.1391 5.3841 18.1305 4.09953 19.3963C2.82133 20.6495 1.80223 22.134 1.09849 23.7679C0.407141 25.3675 0.0342809 27.0825 9.31068e-05 28.82C-0.000900682 28.8591 0.00606959 28.8979 0.0205934 28.9343C0.0351172 28.9706 0.0569006 29.0038 0.08466 29.0317C0.112419 29.0597 0.145593 29.0819 0.182227 29.097C0.21886 29.1122 0.258212 29.12 0.297963 29.12H2.53199C2.69582 29.12 2.82614 28.992 2.82986 28.8347C2.90433 26.0105 4.05858 23.3655 6.09899 21.3608C8.21014 19.2865 11.0139 18.1451 14 18.1451C16.9862 18.1451 19.7899 19.2865 21.901 21.3608C23.9414 23.3655 25.0957 26.0105 25.1701 28.8347C25.1739 28.9956 25.3042 29.12 25.468 29.12H27.702C27.7418 29.12 27.7811 29.1122 27.8178 29.097C27.8544 29.0819 27.8876 29.0597 27.9153 29.0317C27.9431 29.0038 27.9649 28.9706 27.9794 28.9343C27.9939 28.8979 28.0009 28.8591 27.9999 28.82C27.9627 27.0714 27.5941 25.3703 26.9015 23.7643ZM14 15.3648C12.291 15.3648 10.6825 14.71 9.47237 13.521C8.26227 12.3321 7.59579 10.7517 7.59579 9.07256C7.59579 7.39341 8.26227 5.81303 9.47237 4.62408C10.6825 3.43514 12.291 2.7803 14 2.7803C15.709 2.7803 17.3175 3.43514 18.5276 4.62408C19.7377 5.81303 20.4042 7.39341 20.4042 9.07256C20.4042 10.7517 19.7377 12.3321 18.5276 13.521C17.3175 14.71 15.709 15.3648 14 15.3648Z"
+              />
+            </svg>
+          </div>
+          <button
+            class="header__user-auth-button login-button"
+            data-hystmodal="#user-auth__login__modal-wrapper"
+          >
+            Sign In
+          </button>
+          <button
+            class="header__user-auth-button _user-auth-button-colored create-account-button"
+            data-hystmodal="#user-auth__create-account__modal-wrapper"
+          >
+            Sign Up
+          </button>
+        </div>
+
+        <svg
+          class="header__hamburger-menu-icon hamburger-menu"
+          viewBox="0 0 100 80"
+          width="40"
+          height="40"
+        >
+          <rect
+            class="hamburger-menu-icon hamburger-menu-icon-1"
+            width="100"
+            height="10"
+            rx="8"
+          ></rect>
+          <rect
+            class="hamburger-menu-icon hamburger-menu-icon-2"
+            y="30"
+            width="100"
+            height="10"
+            rx="8"
+          ></rect>
+          <rect
+            class="hamburger-menu-icon hamburger-menu-icon-3"
+            y="60"
+            width="100"
+            height="10"
+            rx="8"
+          ></rect>
+        </svg>
+      </header>
+      <section class="about _default-container-prop">
+        <div class="about__content">
+          <div class="about__title">
+            <h1>
+              Want anything to be easy with
+              <span class="_font-bold"> LaslesVPN</span>
+            </h1>
+          </div>
+          <div class="about__text">
+            Provide a network for all your needs with ease and fun using
+            <span class="_font-medium">LaslesVPN </span> discover interesting
+            features from us.
+          </div>
+          <div class="about__get-start-invite">
+            <button class="get-start-invite">Get Started</button>
+          </div>
+        </div>
+        <div class="about__aside-picture">
+          <img src="img/about-aside.png" alt="" />
+        </div>
+      </section>
+      <section class="general-info _default-container-prop">
+        <!--TODO  -->
+
+        <div class="general-info__content">
+          <ul class="general-info__list">
+            <li class="general-info__item">
+              <div class="general-info__item-container">
+                <div class="general-info__picture icon-member"></div>
+                <div class="general-info__text">
+                  <p class="_font-bold">90+</p>
+                  <p>Users</p>
+                </div>
+              </div>
+            </li>
+            <li class="general-info__item">
+              <div class="general-info__item-container">
+                <div class="general-info__picture icon-location"></div>
+                <div class="general-info__text">
+                  <p class="_font-bold">90+</p>
+                  <p>Users</p>
+                </div>
+              </div>
+            </li>
+            <li class="general-info__item">
+              <div class="general-info__item-container">
+                <div class="general-info__picture icon-server"></div>
+                <div class="general-info__text">
+                  <p class="_font-bold">90+</p>
+                  <p>Users</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="features _default-container-prop">
+        <div class="features__aside-picture">
+          <img src="img/feature-aside.png" alt="" />
+        </div>
+
+        <div class="features__content">
+          <div class="features__title">
+            <h2>We Provide Many Features You Can Use</h2>
+          </div>
+          <div class="features__text">
+            You can explore the features that we provide with fun and have their
+            own functions each feature.
+          </div>
+          <ul class="features__list">
+            <li class="features__item">Powerfull online protection.</li>
+            <li class="features__item">Powerfull online protection.</li>
+            <li class="features__item">Powerfull online protection.</li>
+            <li class="features__item">Powerfull online protection.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="info _default-container-prop">
+        <div class="info__content">
+          <div class="info__title">
+            <h2>Huge Global Network of Fast VPN</h2>
+          </div>
+          <div class="info__text">
+            See <span class="_font-medium">LaslesVPN</span> everywhere to make
+            it easier for you when you move locations.
+          </div>
+          <div class="info__picture">
+            <img src="img/location-map.svg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="trusted-by _default-container-prop">
+        <div class="trusted-by__content">
+          <div class="trusted-by__title">
+            <h2 class="title">visually hidden trusted by ?</h2>
+          </div>
+          <ul class="trusted-by__list">
+            <li class="trusted-by__item" tabindex="0">
+              <a href="#" tabindex="-1">
+                <img src="img/amazon-logo.png" alt="" />
+              </a>
+            </li>
+            <li class="trusted-by__item" tabindex="0">
+              <a href="#" tabindex="-1">
+                <img src="img/amazon-logo.png" alt="" />
+              </a>
+            </li>
+            <li class="trusted-by__item" tabindex="0">
+              <a href="#" tabindex="-1">
+                <img src="img/amazon-logo.png" alt="" />
+              </a>
+            </li>
+            <li class="trusted-by__item" tabindex="0">
+              <a href="#" tabindex="-1">
+                <img src="img/amazon-logo.png" alt="" />
+              </a>
+            </li>
+            <li class="trusted-by__item" tabindex="0">
+              <a href="#" tabindex="-1">
+                <img src="img/amazon-logo.png" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="reviews _default-container-prop">
+        <div class="reviews__content">
+          <div class="reviews__header">
+            <div class="reviews__title">
+              <h2>Trusted by Thousands of Happy Customer</h2>
+            </div>
+            <div class="reviews__text">
+              These are the stories of our customers who have joined us with
+              great pleasure when using this crazy feature.
+            </div>
+          </div>
+          <div class="reviews__swiper swiper">
+            <ul class="reviews__list swiper-wrapper">
+              <li class="reviews__item review-article swiper-slide">
+                <div class="review-article__content">
+                  <div class="review-article__header">
+                    <div class="review-article__author-avatar">
+                      <img src="img/review-1.png" alt="" />
+                    </div>
+                    <div class="review-article__author-info">
+                      <h3 class="review-article__author-name">Viezh Robert</h3>
+                      <div class="review-article__author-additional-info">
+                        Warsaw, Poland
+                      </div>
+                      <!--!  check reviews how headed -->
+                    </div>
+                    <div class="review-article__rating">
+                      <divn class="review-article__rating-value">4.5</divn>
+                      <!--! normal star -->
+                    </div>
+                  </div>
+                  <div class="review-article__body">
+                    <div class="review-article__text">
+                      “Wow... I am very happy to use this VPN, it turned out to
+                      be more than my expectations and so far there have been no
+                      problems. LaslesVPN always the best”.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="reviews__item review-article swiper-slide">
+                <div class="review-article__content">
+                  <div class="review-article__header">
+                    <div class="review-article__author-avatar">
+                      <img src="img/review-1.png" alt="" />
+                    </div>
+
+                    <div class="review-article__author-info">
+                      <h3 class="review-article__author-name">Viezh Robert</h3>
+                      <div class="review-article__author-additional-info">
+                        Warsaw, Poland
+                      </div>
+                      <!--!  check reviews how headed -->
+                    </div>
+                    <div class="review-article__rating">
+                      <divn class="review-article__rating-value">4.5</divn>
+                      <!--! normal star -->
+                    </div>
+                  </div>
+                  <div class="review-article__body">
+                    <div class="review-article__text">
+                      “Wow... I am very happy to use this VPN, it turned out to
+                      be more than my expectations and so far there have been no
+                      problems. LaslesVPN always the best”.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="reviews__item review-article swiper-slide">
+                <div class="review-article__content">
+                  <div class="review-article__header">
+                    <div class="review-article__author-avatar">
+                      <img src="img/review-1.png" alt="" />
+                    </div>
+
+                    <div class="review-article__author-info">
+                      <h3 class="review-article__author-name">Viezh Robert</h3>
+                      <div class="review-article__author-additional-info">
+                        Warsaw, Poland
+                      </div>
+                      <!--!  check reviews how headed -->
+                    </div>
+                    <div class="review-article__rating">
+                      <divn class="review-article__rating-value">4.5</divn>
+                      <!--! normal star -->
+                    </div>
+                  </div>
+                  <div class="review-article__body">
+                    <div class="review-article__text">
+                      “Wow... I am very happy to use this VPN, it turned out to
+                      be more than my expectations and so far there have been no
+                      problems. LaslesVPN always the best”.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="reviews__item review-article swiper-slide">
+                <div class="review-article__content">
+                  <div class="review-article__header">
+                    <div class="review-article__author-avatar">
+                      <img src="img/review-1.png" alt="" />
+                    </div>
+
+                    <div class="review-article__author-info">
+                      <h3 class="review-article__author-name">Viezh Robert</h3>
+                      <div class="review-article__author-additional-info">
+                        Warsaw, Poland
+                      </div>
+                      <!--!  check reviews how headed -->
+                    </div>
+                    <div class="review-article__rating">
+                      <divn class="review-article__rating-value">4.5</divn>
+                      <!--! normal star -->
+                    </div>
+                  </div>
+                  <div class="review-article__body">
+                    <div class="review-article__text">
+                      “Wow... I am very happy to use this VPN, it turned out to
+                      be more than my expectations and so far there have been no
+                      problems. LaslesVPN always the best”.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="reviews__item review-article swiper-slide">
+                <div class="review-article__content">
+                  <div class="review-article__header">
+                    <div class="review-article__author-avatar">
+                      <img src="img/review-1.png" alt="" />
+                    </div>
+
+                    <div class="review-article__author-info">
+                      <h3 class="review-article__author-name">Viezh Robert</h3>
+                      <div class="review-article__author-additional-info">
+                        Warsaw, Poland
+                      </div>
+                      <!--!  check reviews how headed -->
+                    </div>
+                    <div class="review-article__rating">
+                      <divn class="review-article__rating-value">4.5</divn>
+                      <!--! normal star -->
+                    </div>
+                  </div>
+                  <div class="review-article__body">
+                    <div class="review-article__text">
+                      “Wow... I am very happy to use this VPN, it turned out to
+                      be more than my expectations and so far there have been no
+                      problems. LaslesVPN always the best”.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="reviews__item review-article swiper-slide">
+                <div class="review-article__content">
+                  <div class="review-article__header">
+                    <div class="review-article__author-avatar">
+                      <img src="img/review-1.png" alt="" />
+                    </div>
+
+                    <div class="review-article__author-info">
+                      <h3 class="review-article__author-name">Viezh Robert</h3>
+                      <div class="review-article__author-additional-info">
+                        Warsaw, Poland
+                      </div>
+                      <!--!  check reviews how headed -->
+                    </div>
+                    <div class="review-article__rating">
+                      <divn class="review-article__rating-value">4.5</divn>
+                      <!--! normal star -->
+                    </div>
+                  </div>
+                  <div class="review-article__body">
+                    <div class="review-article__text">
+                      “Wow... I am very happy to use this VPN, it turned out to
+                      be more than my expectations and so far there have been no
+                      problems. LaslesVPN always the best”.
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="reviews__swiper-control reviews-swiper-control">
+              <div
+                class="reviews-swiper-control__paginator"
+                id="reviews-swiper-control-paginator"
+              ></div>
+              <div class="reviews-swiper-control__arrow-navigation">
+                <button
+                  class="reviews-swiper-control__button icon-arrow-to-left"
+                  id="reviews-swiper-control-button-prev"
+                ></button>
+                <button
+                  class="reviews-swiper-control__button icon-arrow-to-right"
+                  id="reviews-swiper-control-button-next"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="_background-second-type">
+        <section class="tariffs _default-container-prop">
+          <div class="tariffs__content">
+            <div class="tariffs__title">
+              <h2>Choose Your Plan</h2>
+            </div>
+            <div class="tariffs__text">
+              Let's choose the package that is best for you and explore it
+              happily and cheerfully.
+            </div>
+            <ul class="tariffs__list">
+              <li class="tariffs__item tariff-item">
+                <div class="tariff-item__content">
+                  <div class="tariff-item__picture">
+                    <img src="img/tariff-free.svg" alt="" />
+                  </div>
+                  <div class="tariff-item__title">
+                    <h3>Free Plan</h3>
+                  </div>
+                  <ul class="tariff-item__advatages">
+                    <li>
+                      <span> Unlimited Bandwitch </span>
+                    </li>
+                    <li>
+                      <span> Encrypted Connection </span>
+                    </li>
+                    <li>
+                      <span> No Traffic Logs </span>
+                    </li>
+                    <li>
+                      <span> Works on All Devices</span>
+                    </li>
+                  </ul>
+
+                  <div class="tariff-item__rate">Free</div>
+                  <button class="tariff-item__select-button" acrion="#">
+                    Select
+                  </button>
+                </div>
+              </li>
+              <li class="tariffs__item tariff-item">
+                <div class="tariff-item__content">
+                  <div class="tariff-item__picture">
+                    <img src="img/tariff-standard.svg" alt="" />
+                  </div>
+                  <div class="tariff-item__title">
+                    <h3>Standard Plan</h3>
+                  </div>
+                  <ul class="tariff-item__advatages">
+                    <li>
+                      <span> Unlimited Bandwitch </span>
+                    </li>
+                    <li>
+                      <span> Encrypted Connection </span>
+                    </li>
+                    <li>
+                      <span> No Traffic Logs </span>
+                    </li>
+                    <li>
+                      <span> Works on All Devices</span>
+                    </li>
+                    <li>
+                      <span> Connect Anyware</span>
+                    </li>
+                  </ul>
+
+                  <div class="tariff-item__rate">
+                    $9 <span class="_font-regular">/ mo</span>
+                  </div>
+                  <button class="tariff-item__select-button" acrion="#">
+                    Select
+                  </button>
+                </div>
+              </li>
+              <li class="tariffs__item tariff-item">
+                <div class="tariff-item__content">
+                  <div class="tariff-item__picture">
+                    <img src="img/tariff-premium.svg" alt="" />
+                  </div>
+                  <div class="tariff-item__title">
+                    <h3>Standard Plan</h3>
+                  </div>
+                  <ul class="tariff-item__advatages">
+                    <li>
+                      <span> Unlimited Bandwitch </span>
+                    </li>
+                    <li>
+                      <span> Encrypted Connection </span>
+                    </li>
+                    <li>
+                      <span> No Traffic Logs </span>
+                    </li>
+                    <li>
+                      <span> Works on All Devices</span>
+                    </li>
+                    <li>
+                      <span> Connect Anyware</span>
+                    </li>
+                    <li>
+                      <span> Get New Features</span>
+                    </li>
+                  </ul>
+
+                  <div class="tariff-item__rate">
+                    $12 <span class="_font-regular">/ mo</span>
+                  </div>
+                  <button class="tariff-item__select-button" acrion="#">
+                    Select
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="newsletter-sucbscribe">
+          <div class="newsletter-sucbscribe__info">
+            <div class="newsletter-sucbscribe__title">
+              <h2 class="title">
+                Subscribe Now <br />
+                Get Special Features!
+              </h2>
+            </div>
+            <div class="newsletter-sucbscribe__text">
+              Let's subscribe with us and find the fun.
+            </div>
+          </div>
+          <div class="newsletter-sucbscribe__actions">
+              <button class="get-start-invite">Get Started</button>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="footer__container _default-container-prop">
+            <div class="footer__top">
+              <div class="footer__info">
+                <div class="footer__info-content">
+                  <a class="footer__logo logo" href="">
+                    <img src="img/icons/logo.png" alt=""
+                  /></a>
+
+                  <div class="footer__text">
+                    <span class="_font-medium">LaslesVPN</span> is a private
+                    virtual network that has unique features and has high
+                    security.
+                  </div>
+                  <div class="footer__media-links">
+                    <a
+                      href="#"
+                      class="footer__facebook-link media-link icon-facebook _default-color"
+                    ></a>
+                    <a
+                      href="#"
+                      class="footer__twitter-link media-link icon-twitter _default-color"
+                    ></a>
+                    <a
+                      href="#"
+                      class="footer__instagram-link media-link icon-instagram _default-color"
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <ul class="footer__links">
+                <li class="footer__links-columns">
+                  <h3>Product</h3>
+                  <ul class="footer__link-list">
+                    <li>
+                      <a href="#">Download</a>
+                    </li>
+                    <li>
+                      <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                      <a href="#">Locations</a>
+                    </li>
+                    <li>
+                      <a href="#">Server</a>
+                    </li>
+                    <li>
+                      <a href="#">Countries</a>
+                    </li>
+                    <li>
+                      <a href="#">Blog</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__links-columns">
+                  <h3>Engage</h3>
+                  <ul class="footer__link-list">
+                    <li>
+                      <a href="#">LaslesVPN ? </a>
+                    </li>
+                    <li>
+                      <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                      <a href="#">Tutorials</a>
+                    </li>
+                    <li>
+                      <a href="#">About Us</a>
+                    </li>
+                    <li>
+                      <a href="#">Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a href="#">Terms of Service</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__links-columns">
+                  <h3>Earn Money</h3>
+                  <ul class="footer__link-list">
+                    <li>
+                      <a href="#">Affiliate</a>
+                    </li>
+                    <li>
+                      <a href="#">Become Partner</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__bottom">
+            <div class="footer__copyright">©2020LaslesVPN</div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
